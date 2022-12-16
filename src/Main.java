@@ -1,3 +1,11 @@
+import enums.Gender;
+import model.User;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -9,8 +17,16 @@ public class Main {
         // Китептин чыккан жылы келечек убакыт болбошу керек.Болбосо DateTimeException ыргытсын.
         // Китептин автору бош болбошу керек. Болбосо EmptyStackException ыргытсын.
 
+        List<User>users= new ArrayList<>(Arrays.asList(
+                new User(1243121,"Altyn","Shakirov","Altynbek@gmail",999838383, Gender.MALE)
+
+
+
+        ));
+
 
         
 
     }
+
 }
