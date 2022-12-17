@@ -15,6 +15,9 @@ public class Book {
     private Language language;
     private LocalDate publishedYear;
 
+    public Book() {
+    }
+
     public Book(Long id, String name, Genre genre, BigDecimal price, String author, Language language, LocalDate publishedYear) {
         this.id = id;
         this.name = name;
@@ -84,14 +87,13 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", genre=" + genre +
-                ", price=" + price +
-                ", author='" + author + '\'' +
-                ", language=" + language +
-                ", publishedYear=" + publishedYear +
-                '}';
+        return "Book\n" +
+                "id: " + id +"\n"+
+                "name: " + name + '\n' +
+                "genre: " + genre +"\n"+
+                "price: " + price +"\n"+
+                "author: " + author + '\n' +
+                "language: " + language +"\n"+
+                "publishedYear: " + publishedYear + '\n';
     }
 }

@@ -16,16 +16,20 @@ public class User {
     private BigDecimal money;
     private List<Book> books;
 
+    public User() {
+    }
 
-    public User(Long id, String name, String surname, String email, String phoneNumber, Gender gender, BigDecimal money, List<Book> books) {
+    public User(Long id, String name, String surname, String email, String phoneNumber, Gender gender, BigDecimal money) {
         this.id = id;
         this.name = name;
         this.surname = surname;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
+        if (email.endsWith("@gmail.com")) {
+            this.email = email;
+        }
+        if (phoneNumber.startsWith("+996")) {
+            this.phoneNumber = phoneNumber;
+        }
         this.gender = gender;
-        this.money = money;
-        this.books = books;
     }
 
     public Long getId() {
@@ -94,15 +98,14 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", email='" + email + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", gender=" + gender +
-                ", money=" + money +
-                ", books=" + books +
-                '}';
+        return "User:\n" +
+                "id: " + id + "\n" +
+                "name: " + name + '\n' +
+                "surname: " + surname + '\n' +
+                "email: " + email + '\n' +
+                "phoneNumber: " + phoneNumber + '\n' +
+                "gender: " + gender + "\n" +
+                "money: " + money + "\n" +
+                "books: " + books + '\n';
     }
 }
